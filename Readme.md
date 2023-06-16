@@ -23,12 +23,12 @@ shop_kotlin_restassured_test$ ./`allure serve target/surefire-reports/`
 Пример:
 
 ```java
-@Tag("animals")
-@Epic("REST API Animal")
-@DisplayName("Animals Test") 
-@Story("Animal requests test")
-@Feature("Verify CRUD Operations on Animal")
-public class AnimalsTest {
+@Tag("ahop_kotlin")
+@Epic("REST API ")
+@DisplayName("Display name test") 
+@Story("Story requests test")
+@Feature("Verify CRUD Operations")
+public class RestTest {
  
 }
 
@@ -58,16 +58,7 @@ https://allure-framework.github.io/allure-demo/5/#suites/a2891ce60e520f56ae25e6c
 ~/prog/java/allure-examples/allure-junit5
 
 ````shell
-$ cd ~/prog/java/allure-examples/allure-junit5
-$ mvn clean test
-$ allure serve allure-results/
+shop_kotlin-restassured-test$ cd ~/<catalog project>
+shop_kotlin-restassured-test$ mvn clean test
+shop_kotlin-restassured-test$ allure serve allure-results/
 ````
-
-~/prog/java/allure-examples/allure-junit5-example
-
-````shell
-$ cd ~/prog/java/allure-examples/allure-junit5-example
-$ mvn clean test
-$ ~/prog/java/allure-examples/allure-junit5-example$ allure serve allure-results/
-````
-
