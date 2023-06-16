@@ -28,4 +28,6 @@ class EchoRestTest {
         val responseBody = response.asString()
         assertEquals(MESSAGE, responseBody)
     }
+
+
 }
