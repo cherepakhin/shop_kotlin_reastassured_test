@@ -13,7 +13,7 @@
 # Проведение теста
 shop_kotlin-restassured-test$ mvn clean test
 # Просмотр отчета в браузере
-shop_kotlin_restassured_test$ ./`allure serve target/surefire-reports/`
+shop_kotlin_restassured_test$ ./allure serve target/surefire-reports/
 ```
 
 
