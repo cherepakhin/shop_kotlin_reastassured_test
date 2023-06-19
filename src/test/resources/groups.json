@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "haveChilds": false,
+    "name": "IT products",
+    "parentId": -1
+  },
+  {
+    "id": 2,
+    "haveChilds": false,
+    "name": "Computers",
+    "parentId": 1
+  }
+]
