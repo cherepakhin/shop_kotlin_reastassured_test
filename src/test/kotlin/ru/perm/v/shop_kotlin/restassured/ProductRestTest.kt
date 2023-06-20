@@ -22,8 +22,15 @@ class ProductRestTest {
     @Test
     @DisplayName("GET number of product NAMES RESULT is 9")
     fun getNumberOfProductNames_checkCount() {
-        var result = RestAssured.given().`when`().get(PRODUCT_PATH + "count_names").asString()
+        val result = RestAssured.given().`when`().get(PRODUCT_PATH + "count_names").asString()
         assertEquals("9", result)
     }
 
+    @Test
+    @DisplayName("GET number of product NAMES RESULT is 9 and status=Ok (for example)")
+    fun getNumberOfProductNames_checkStatus_checkCount() {
+        RestAssured.given().`when`().get(PRODUCT_PATH + "count_names")
+            .body().toString().contentEquals("Ok")
+            .and(equals("9"))
+    }
 }
