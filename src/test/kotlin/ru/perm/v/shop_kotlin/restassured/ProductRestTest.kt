@@ -29,8 +29,9 @@ class ProductRestTest {
     @Test
     @DisplayName("GET number of product NAMES RESULT is 9 and status=Ok (for example)")
     fun getNumberOfProductNames_checkStatus_checkCount() {
-        RestAssured.given().`when`().get(PRODUCT_PATH + "count_names")
-            .body().toString().contentEquals("Ok")
-            .and(equals("9"))
+        val response = RestAssured.given().`when`().get(PRODUCT_PATH + "count_names")
+
+        assertEquals(HttpStatus.SC_OK, response.statusCode())
+        assertEquals(9, response.asString().toInt())
     }
 }
