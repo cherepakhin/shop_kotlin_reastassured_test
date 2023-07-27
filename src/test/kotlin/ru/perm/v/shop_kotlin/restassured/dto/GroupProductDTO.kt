@@ -1,14 +1,14 @@
 package ru.perm.v.shop_kotlin.restassured.dto
 
 class GroupProductDTO(
-    val id: Long = -1,
+    val n: Long = -1,
     val name: String = "",
     val haveChilds: Boolean = false,
-    val parentId: Long = -1
+    val parentN: Long = -1
 ) {
 
     override fun toString(): String {
-        return "GroupProductDTO(id=$id, name='$name', parentId=$parentId, haveChilds=$haveChilds)"
+        return "GroupProductDTO(n=$n, name='$name', parentN=$parentN, haveChilds=$haveChilds)"
     }
 
     override fun equals(other: Any?): Boolean {
@@ -17,18 +17,18 @@ class GroupProductDTO(
 
         other as GroupProductDTO
 
-        if (id != other.id) return false
+        if (n != other.n) return false
         if (name != other.name) return false
-        if (parentId != other.parentId) return false
+        if (parentN != other.parentN) return false
         if (haveChilds != other.haveChilds) return false
 
         return true
     }
 
     override fun hashCode(): Int {
-        var result = id.hashCode()
+        var result = n.hashCode()
         result = 31 * result + name.hashCode()
-        result = 31 * result + parentId.hashCode()
+        result = 31 * result + parentN.hashCode()
         result = 31 * result + haveChilds.hashCode()
         return result
     }

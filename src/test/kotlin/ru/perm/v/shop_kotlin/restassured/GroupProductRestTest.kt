@@ -34,7 +34,7 @@ class GroupProductRestTest {
         assertEquals(6, groups.size)
 
         val g0 = groups.get(0)
-        assertEquals(1, g0.id)
+        assertEquals(1, g0.n)
         assertEquals(GroupProductDTO(1, "IT products", true, -1), groups.get(0))
         assertEquals(GroupProductDTO(2, "Computers", true, 1), groups.get(1))
         assertEquals(GroupProductDTO(3, "Desktop Computers", false, 2), groups.get(2))
@@ -45,8 +45,8 @@ class GroupProductRestTest {
     @DisplayName("Example convert array to json and assert DTO")
     fun exampleConvertJsonToGroupProductDTO() {
         val response: Response = given().get(CONSTS.GROUP_PATH)
-
         val jsonPathEvaluator = response.jsonPath()
+
         val groups = jsonPathEvaluator.getList<GroupProductDTO>(".", GroupProductDTO::class.java);
         assertEquals(6, groups.size)
         assertEquals(GroupProductDTO(1, "IT products", true, -1), groups.get(0))
