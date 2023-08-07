@@ -17,6 +17,15 @@ class GroupProductRestTest {
 
     val mapper = ObjectMapper()
 
+
+    @Test
+    @Epic("REST API getById()")
+    @DisplayName("GET Request GroupProductRest.getById() is status=200")
+    fun getById() {
+        given().`when`().get(CONSTS.GROUP_PATH+"").then()
+            .statusCode(HttpStatus.SC_OK)
+    }
+
     @Test
     @Epic("REST API getAll()")
     @DisplayName("GET Request GroupProductRest.all() with message is status=200")
