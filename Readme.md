@@ -9,6 +9,19 @@
 Перед запуском тестов нужно запустить сам проект:
 [https://github.com/cherepakhin/shop_kotlin](https://github.com/cherepakhin/shop_kotlin)
 
+Константы (адрес сервиса, REST пути и т.п.) заданы в [src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONST.kt](https://github.com/cherepakhin/shop_kotlin/src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONST.kt)
+
+````kotlin
+class CONSTS {
+    companion object { //TODO
+        val HOST = "http://127.0.0.1:8780/api"
+        val ECHO_PATH = HOST + "/echo/"
+        val GROUP_PATH = HOST + "/group_product/"
+        val PRODUCT_PATH = HOST + "/product/"
+    }
+}
+
+````
 ```shell
 # Проведение теста
 shop_kotlin-restassured-test$ mvn clean test
