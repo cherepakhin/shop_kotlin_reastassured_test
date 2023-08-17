@@ -9,7 +9,7 @@
 Перед запуском тестов нужно запустить сам проект:
 [https://github.com/cherepakhin/shop_kotlin](https://github.com/cherepakhin/shop_kotlin)
 
-Константы (адрес сервиса, REST пути и т.п.) заданы в [src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONST.kt](https://github.com/cherepakhin/shop_kotlin/src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONST.kt)
+Константы (адрес сервиса, REST пути и т.п.) заданы в [src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONST.kt](https://github.com/cherepakhin/shop_kotlin_reastassured_test/blob/dev/src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONSTS.kt)
 
 ````kotlin
 class CONSTS {
