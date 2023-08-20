@@ -31,6 +31,10 @@ shop_kotlin-restassured-test$ mvn clean test
 shop_kotlin_restassured_test$ ./allure serve target/surefire-reports/
 ```
 
+### Результаты behave тестирования
+
+![Результаты behave тестирования](doc/result_test.png)
+
 ### Памятка по группировке тестов allure
 
 Пример:
