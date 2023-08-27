@@ -1,4 +1,4 @@
-### Behave тестирование RestAssured проекта shop_kotlin
+### Behave тестирование с помощью RestAssured проекта shop_kotlin
 
 Тестируемый проект [https://github.com/cherepakhin/shop_kotlin](https://github.com/cherepakhin/shop_kotlin)
 
