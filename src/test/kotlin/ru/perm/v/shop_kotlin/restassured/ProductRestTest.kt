@@ -13,7 +13,7 @@ class ProductRestTest {
     val mapper = ObjectMapper()
 
     @Test
-    @DisplayName("GET number of product NAMES is status=200")
+    @DisplayName("GET count_names of products is status=200")
     fun getNumberOfProductNames_HttpStatusIsOK() {
         RestAssured.given().`when`().get(PRODUCT_PATH + "count_names").then()
             .statusCode(HttpStatus.SC_OK)
