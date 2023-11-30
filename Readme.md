@@ -63,6 +63,7 @@ public class RestTest {
 
 ![Отчет с ошибками](doc/result_test_error.png)
 
+Тесты на незапущенном сервисе:
 ![Тесты на незапущенном сервисе](doc/error_test_for_not_runned_service.png)
 
 ### Шпаргалка по вложенности
