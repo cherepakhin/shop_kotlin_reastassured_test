@@ -16,7 +16,7 @@
 ````kotlin
 class CONSTS {
     companion object { //TODO
-        val HOST = "http://127.0.0.1:8988/shop_kotlin/api"
+        val HOST = "http://127.0.0.1:8980/shop_kotlin/api"
         val ECHO_PATH = HOST + "/echo/"
         val GROUP_PATH = HOST + "/group_product/"
         val PRODUCT_PATH = HOST + "/product/"
