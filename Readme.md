@@ -11,23 +11,39 @@
 Перед запуском тестов нужно запустить сам проект:
 [https://github.com/cherepakhin/shop_kotlin](https://github.com/cherepakhin/shop_kotlin)
 
-Константы (адрес сервиса, REST пути и т.п.) заданы в [src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONST.kt](https://github.com/cherepakhin/shop_kotlin_reastassured_test/blob/dev/src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONSTS.kt)
+### Env переменные
+
+Константы (адрес сервиса, REST пути и т.п.) заданы в [src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONST.kt](https://github.com/cherepakhin/shop_kotlin_reastassured_test/blob/dev/src/test/kotlin/ru/perm/v/shop_kotlin/restassured/CONSTS.kt):
 
 ````kotlin
 class CONSTS {
-    companion object { //TODO
-        val HOST = "http://127.0.0.1:8980/shop_kotlin/api"
-        val ECHO_PATH = HOST + "/echo/"
-        val GROUP_PATH = HOST + "/group_product/"
-        val PRODUCT_PATH = HOST + "/product/"
-    }
+ companion object {
+  val IP = System.getenv("SHOP_KOTLIN_IP") ?: "127.0.0.1:8980"
+  val HOST = "http://"+IP +"/shop_kotlin/api"
+  val ECHO_PATH = HOST + "/echo/"
+  val GROUP_PATH = HOST + "/group_product/"
+  val PRODUCT_PATH = HOST + "/product/"
+ }
 }
-
 ````
+
+SHOP_KOTLIN_IP - адрес и порт сервиса. По умолчанию: __127.0.0.1:8980__. Установка переменных:
+
+````shell
+$ export SHOP_KOTLIN_IP=192.168.1.57:8980
+$ echo $SHOP_KOTLIN_IP
+192.168.1.57:8980
+````
+
+### Проведение теста
+
 ```shell
-# Проведение теста
 shop_kotlin-restassured-test$ mvn clean test
-# Просмотр отчета в браузере
+```
+
+Просмотр отчета в браузере:
+
+```shell
 shop_kotlin_restassured_test$ ./allure serve target/surefire-reports/
 ```
 
@@ -81,14 +97,4 @@ https://allure-framework.github.io/allure-demo/5/#suites/a2891ce60e520f56ae25e6c
 shop_kotlin-restassured-test$ cd ~/<catalog project>
 shop_kotlin-restassured-test$ mvn clean test
 shop_kotlin-restassured-test$ allure serve allure-results/
-````
-
-### Установка env переменных
-
-SHOP_KOTLIN_IP - адрес и порт сервиса. По умолчанию: __127.0.0.1:8980__ 
-
-````shell
-$ export SHOP_KOTLIN_IP=192.168.1.57:8980
-$ echo $SHOP_KOTLIN_IP
-192.168.1.57:8980
 ````
