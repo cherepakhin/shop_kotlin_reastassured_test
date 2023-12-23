@@ -82,3 +82,11 @@ shop_kotlin-restassured-test$ cd ~/<catalog project>
 shop_kotlin-restassured-test$ mvn clean test
 shop_kotlin-restassured-test$ allure serve allure-results/
 ````
+
+### Установка env переменных
+
+````shell
+$ export SHOP_KOTLIN_IP=127.0.0.1
+$ echo $SHOP_KOTLIN_IP
+127.0.0.1
+````
