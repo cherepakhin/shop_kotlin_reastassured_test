@@ -85,8 +85,10 @@ shop_kotlin-restassured-test$ allure serve allure-results/
 
 ### Установка env переменных
 
+SHOP_KOTLIN_IP - адрес и порт сервиса. По умолчанию: __127.0.0.1:8980__ 
+
 ````shell
-$ export SHOP_KOTLIN_IP=127.0.0.1
+$ export SHOP_KOTLIN_IP=192.168.1.57:8980
 $ echo $SHOP_KOTLIN_IP
-127.0.0.1
+192.168.1.57:8980
 ````
