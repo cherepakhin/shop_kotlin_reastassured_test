@@ -18,8 +18,8 @@
 ````kotlin
 class CONSTS {
  companion object {
-  val IP = System.getenv("SHOP_KOTLIN_IP") ?: "127.0.0.1:8980"
-  val HOST = "http://"+IP +"/shop_kotlin/api"
+  val SHOP_KOTLIN_IP = System.getenv("SHOP_KOTLIN_IP") ?: "127.0.0.1:8980"
+  val HOST = "http://"+SHOP_KOTLIN_IP +"/shop_kotlin/api"
   val ECHO_PATH = HOST + "/echo/"
   val GROUP_PATH = HOST + "/group_product/"
   val PRODUCT_PATH = HOST + "/product/"
