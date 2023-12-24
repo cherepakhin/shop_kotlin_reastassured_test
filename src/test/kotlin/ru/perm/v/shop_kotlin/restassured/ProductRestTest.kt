@@ -32,6 +32,6 @@ class ProductRestTest {
         val response = RestAssured.given().`when`().get(PRODUCT_PATH + "count_names")
 
         assertEquals(HttpStatus.SC_OK, response.statusCode())
-        assertEquals(9, response.asString().toInt())
+        assertEquals(10, response.asString().toInt())
     }
 }
