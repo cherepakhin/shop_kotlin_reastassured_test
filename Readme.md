@@ -98,3 +98,9 @@ shop_kotlin-restassured-test$ cd ~/<catalog project>
 shop_kotlin-restassured-test$ mvn clean test
 shop_kotlin-restassured-test$ allure serve allure-results/
 ````
+
+### Grafana
+
+Timeout(10s)
+
+![Нагрузка при проведении тестов](doc/grafana_10s.png)
