@@ -101,6 +101,8 @@ shop_kotlin-restassured-test$ allure serve allure-results/
 
 ### Grafana
 
+Вообще, Grafana используется для мониторинга работающего приложения, здесь только для интереса. Какие-то общие сведения можно увидеть на тестах. 
+
 Timeout(10s)
 
 ![Нагрузка при проведении тестов](doc/grafana_10s.png)
