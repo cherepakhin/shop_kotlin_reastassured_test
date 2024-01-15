@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test
 import ru.perm.v.shop_kotlin.restassured.dto.GroupProductDTO
 import kotlin.test.assertEquals
 
-
+/**
+ * Example read from not valid json with array [{...},{...}]
+ */
 class ConvertGroupProductJsonToObj {
     val mapper = ObjectMapper()
 

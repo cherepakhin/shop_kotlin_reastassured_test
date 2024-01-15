@@ -59,5 +59,4 @@ class GroupProductRestTest {
         assertEquals(7, groups.size)
         assertEquals(GroupProductDTO(1, "IT products", true, -1), groups.get(0))
     }
-
 }
