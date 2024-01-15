@@ -57,9 +57,6 @@ class ProductRestTest {
         assertEquals("{\"n\":33,\"name\":\"Desktop3\",\"groupDtoN\":3}", json)
 
         val receivedProductDto=mapper.readValue(json, ProductDTO::class.java)
-        assertEquals(ID, receivedProductDto.n)
-
-        val sampleProductDto = ProductDTO(ID, "Desktop3", 3)
-        assertEquals(sampleProductDto, receivedProductDto)
+        assertEquals(ProductDTO(ID, "Desktop3", 3), receivedProductDto)
     }
 }
