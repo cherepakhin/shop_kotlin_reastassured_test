@@ -6,6 +6,7 @@ import org.apache.http.HttpStatus
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import ru.perm.v.shop_kotlin.restassured.CONSTS.Companion.PRODUCT_PATH
+import ru.perm.v.shop_kotlin.restassured.dto.ProductDTO
 import kotlin.test.assertEquals
 
 @DisplayName("Products tests /product")
@@ -42,5 +43,23 @@ class ProductRestTest {
 
         assertEquals(HttpStatus.SC_OK, response.statusCode())
         assertEquals("ECHO_MESSAGE", response.asString())
+    }
+
+    @Test
+    @DisplayName("Get Product by ID")
+    fun getByN_Test() {
+        val ID:Long = 33
+        val response = RestAssured.given().`when`().get(PRODUCT_PATH + ID)
+
+        assertEquals(HttpStatus.SC_OK, response.statusCode())
+
+        val json=response.asString()
+        assertEquals("{\"n\":33,\"name\":\"Desktop3\",\"groupDtoN\":3}", json)
+
+        val receivedProductDto=mapper.readValue(json, ProductDTO::class.java)
+        assertEquals(ID, receivedProductDto.n)
+
+        val sampleProductDto = ProductDTO(ID, "Desktop3", 3)
+        assertEquals(sampleProductDto, receivedProductDto)
     }
 }
