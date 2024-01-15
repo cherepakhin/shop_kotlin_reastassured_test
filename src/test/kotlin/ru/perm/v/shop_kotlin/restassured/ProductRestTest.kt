@@ -34,4 +34,13 @@ class ProductRestTest {
         assertEquals(HttpStatus.SC_OK, response.statusCode())
         assertEquals(9, response.asString().toInt())
     }
+
+    @Test
+    @DisplayName("Simple get echo test")
+    fun echoTest() {
+        val response = RestAssured.given().`when`().get(PRODUCT_PATH + "echo/ECHO_MESSAGE")
+
+        assertEquals(HttpStatus.SC_OK, response.statusCode())
+        assertEquals("ECHO_MESSAGE", response.asString())
+    }
 }
