@@ -1,0 +1,4 @@
+#
+#Wed Oct 30 14:42:50 YEKT 2024
+CPU=Intel i3
+RAM=16GB
