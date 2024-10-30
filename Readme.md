@@ -35,7 +35,7 @@ $ echo $SHOP_KOTLIN_IP
 192.168.1.57:8980
 ````
 
-### Проведение теста
+### Проведение тестов
 
 ```shell
 shop_kotlin-restassured-test$ mvn clean test
@@ -46,6 +46,12 @@ shop_kotlin-restassured-test$ mvn clean test
 ```shell
 shop_kotlin_restassured_test$ ./allure serve target/surefire-reports/
 ```
+
+Проведение КОНКРЕТНОГО теста:
+
+````shell
+shop_kotlin_restassured_test$ mvn clean test -Dtest=EchoRestTest
+````
 
 ### Результаты behave тестирования
 
