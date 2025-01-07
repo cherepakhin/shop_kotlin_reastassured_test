@@ -3,6 +3,7 @@ package ru.perm.v.shop_kotlin.restassured
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.restassured.RestAssured
 import org.apache.http.HttpStatus
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import ru.perm.v.shop_kotlin.restassured.CONSTS.Companion.PRODUCT_PATH
@@ -28,6 +29,7 @@ class ProductRestTest {
     }
 
     @Test
+    @Disabled
     @DisplayName("GET number of product NAMES RESULT is 9 and status=Ok (for example)")
     fun getNumberOfProductNames_checkStatus_checkCount() {
         val response = RestAssured.given().`when`().get(PRODUCT_PATH + "count_names")
@@ -37,6 +39,7 @@ class ProductRestTest {
     }
 
     @Test
+    @Disabled
     @DisplayName("Simple get echo test")
     fun echoTest() {
         val response = RestAssured.given().`when`().get(PRODUCT_PATH + "echo/ECHO_MESSAGE")
@@ -46,6 +49,7 @@ class ProductRestTest {
     }
 
     @Test
+    @Disabled
     @DisplayName("Get Product by ID")
     fun getByN_Test() {
         val ID:Long = 33

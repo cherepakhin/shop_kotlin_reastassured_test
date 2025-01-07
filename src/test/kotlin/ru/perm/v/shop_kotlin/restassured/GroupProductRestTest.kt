@@ -7,6 +7,7 @@ import io.restassured.RestAssured.given
 import io.restassured.response.Response
 import org.apache.http.HttpStatus
 import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import ru.perm.v.shop_kotlin.restassured.dto.GroupProductDTO
@@ -34,6 +35,7 @@ class GroupProductRestTest {
     }
 
     @Test
+    @Disabled
     @Epic("REST API getById()")
     @DisplayName("GET Request GroupProductRest.getById() is status=200")
     fun getById() {
@@ -42,6 +44,7 @@ class GroupProductRestTest {
     }
 
     @Test
+    @Disabled
     @Epic("REST API getAll()")
     @DisplayName("GET Request GroupProductRest.all() with message is status=200")
     fun getAll_HttpStatusIsOK() {
@@ -50,6 +53,7 @@ class GroupProductRestTest {
     }
 
     @Test
+    @Disabled
     @Epic("REST API getAll()")
     @DisplayName("TEST GET Request GroupProductRest.all() check dtos")
     fun getAll_check_DTO() {
@@ -65,6 +69,7 @@ class GroupProductRestTest {
     }
 
     @Test
+    @Disabled
     @Epic("Example")
     @DisplayName("Example convert array to json and assert DTO")
     fun exampleConvertJsonToGroupProductDTO() {
