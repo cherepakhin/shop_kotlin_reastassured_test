@@ -6,9 +6,12 @@ import io.qameta.allure.Epic
 import io.restassured.RestAssured.given
 import io.restassured.response.Response
 import org.apache.http.HttpStatus
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import ru.perm.v.shop_kotlin.restassured.dto.GroupProductDTO
+import java.io.FileOutputStream
+import java.util.*
 import kotlin.test.assertEquals
 
 
@@ -17,11 +20,24 @@ class GroupProductRestTest {
 
     val mapper = ObjectMapper()
 
+    companion object {
+        @JvmStatic
+        @BeforeAll
+        fun setup() {
+            val fileProps = FileOutputStream("./props.txt")
+            val props = Properties()
+            props.setProperty("CPU", "Intel i3")
+            props.setProperty("RAM", "16GB")
+            props.store(fileProps, "")
+            fileProps.close()
+        }
+    }
+
     @Test
     @Epic("REST API getById()")
     @DisplayName("GET Request GroupProductRest.getById() is status=200")
     fun getById() {
-        given().`when`().get(CONSTS.GROUP_PATH+"").then()
+        given().`when`().get(CONSTS.GROUP_PATH + "").then()
             .statusCode(HttpStatus.SC_OK)
     }
 

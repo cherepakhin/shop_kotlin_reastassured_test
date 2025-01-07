@@ -7,5 +7,6 @@ class CONSTS {
         val ECHO_PATH = HOST + "/echo/"
         val GROUP_PATH = HOST + "/group_product/"
         val PRODUCT_PATH = HOST + "/product/"
+        val LOG_PATH = HOST + "/log/"
     }
 }
