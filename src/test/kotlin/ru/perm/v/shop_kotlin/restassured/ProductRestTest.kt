@@ -6,6 +6,7 @@ import org.apache.http.HttpStatus
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
+import org.slf4j.LoggerFactory
 import ru.perm.v.shop_kotlin.restassured.CONSTS.Companion.PRODUCT_PATH
 import ru.perm.v.shop_kotlin.restassured.dto.ProductDTO
 import kotlin.test.assertEquals
@@ -13,47 +14,46 @@ import kotlin.test.assertEquals
 @DisplayName("Products tests /product")
 class ProductRestTest {
     val mapper = ObjectMapper()
+    private val logger = LoggerFactory.getLogger(this.javaClass.name)
 
     @Test
     @DisplayName("GET count_names of products is status=200")
     fun getNumberOfProductNames_HttpStatusIsOK() {
-        RestAssured.given().`when`().get(PRODUCT_PATH + "count_names").then()
+        val path = PRODUCT_PATH + "count_names"
+        logger.info("GET "+ path)
+        RestAssured.given().`when`().get(path).then()
             .statusCode(HttpStatus.SC_OK)
     }
 
     @Test
     @DisplayName("GET number of product NAMES RESULT is 9")
     fun getNumberOfProductNames_checkCount() {
-        val result = RestAssured.given().`when`().get(PRODUCT_PATH + "count_names").asString()
+        val path = PRODUCT_PATH + "count_names"
+        logger.info("GET "+ path)
+        val result = RestAssured.given().`when`().get(path).asString()
         assertEquals("9", result)
     }
 
     @Test
-    @Disabled
     @DisplayName("GET number of product NAMES RESULT is 9 and status=Ok (for example)")
     fun getNumberOfProductNames_checkStatus_checkCount() {
-        val response = RestAssured.given().`when`().get(PRODUCT_PATH + "count_names")
+        val path = PRODUCT_PATH + "count_names"
+        logger.info("GET "+ path)
+        val response = RestAssured.given().`when`().get(path)
 
         assertEquals(HttpStatus.SC_OK, response.statusCode())
         assertEquals(9, response.asString().toInt())
     }
 
     @Test
-    @Disabled
-    @DisplayName("Simple get echo test")
-    fun echoTest() {
-        val response = RestAssured.given().`when`().get(PRODUCT_PATH + "echo/ECHO_MESSAGE")
-
-        assertEquals(HttpStatus.SC_OK, response.statusCode())
-        assertEquals("ECHO_MESSAGE", response.asString())
-    }
-
-    @Test
+    //TODO: not released
     @Disabled
     @DisplayName("Get Product by ID")
     fun getByN_Test() {
         val ID:Long = 33
-        val response = RestAssured.given().`when`().get(PRODUCT_PATH + ID)
+        val path = PRODUCT_PATH + ID
+        logger.info("GET "+ path)
+        val response = RestAssured.given().`when`().get(path)
 
         assertEquals(HttpStatus.SC_OK, response.statusCode())
 
