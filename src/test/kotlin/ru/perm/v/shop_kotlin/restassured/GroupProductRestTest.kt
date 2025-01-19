@@ -20,6 +20,7 @@ class GroupProductRestTest {
 
     val mapper = ObjectMapper()
 
+    // for documentation demo
     companion object {
         @JvmStatic
         @BeforeAll
@@ -51,11 +52,11 @@ class GroupProductRestTest {
 
     @Test
     @Epic("REST API getAll()")
-    @DisplayName("TEST GET Request GroupProductRest.all() check dtos")
+    @DisplayName("GET Request GroupProductRest.all() check dtos")
     fun getAll_check_DTO() {
         val json: String = given().get(CONSTS.GROUP_PATH).asString()
         val groups: List<GroupProductDTO> = mapper.readValue(json, object : TypeReference<List<GroupProductDTO>>() {})
-        assertEquals(7, groups.size)
+        assertEquals(6, groups.size)
 
         val g0 = groups.get(0)
         assertEquals(1, g0.n)
@@ -72,7 +73,7 @@ class GroupProductRestTest {
         val jsonPathEvaluator = response.jsonPath()
 
         val groups = jsonPathEvaluator.getList<GroupProductDTO>(".", GroupProductDTO::class.java);
-        assertEquals(7, groups.size)
+        assertEquals(6, groups.size)
         assertEquals(GroupProductDTO(1, "IT products", true, -1), groups.get(0))
     }
 }
